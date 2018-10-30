@@ -1,10 +1,16 @@
--- Create the burgers_db.
--- Switch to or use the burgers_db.
--- Create a burgers table with these fields:
+### SQL Schema
 
+DROP DATABASE IF EXISTS burgers_db;
 
--- id: an auto incrementing int that serves as the primary key.
+CREATE DATABASE burgers_db;
 
--- burger_name: a string.
+USE burgers_db;
+ 
+CREATE TABLE burgers (
+	id INT AUTO_INCREMENT NOT NULL,
+    burger_name VARCHAR(30) NOT NULL,
+    devoured BOOLEAN DEFAULT 0,
+    PRIMARY KEY (id)
+);
 
--- devoured: a boolean.
+    
