@@ -14,7 +14,7 @@ function printQMs(amount) {
     return arr.toString();
   };
 //   Converts object properties into SQL syntax
-  function objToSql(ob) {
+  function objSql(ob) {
     var arr = [];
   
     // loop through the keys and push the key/value as a string int arr
@@ -67,7 +67,7 @@ let orm = {
         let queryString = "UPDATE " + table;
 
         queryString += " SET ";
-        queryString += objToSql(objCols);
+        queryString += objSql(objCols);
         queryString += " WHERE ";
         queryString += condition;
 
