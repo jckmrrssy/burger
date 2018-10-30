@@ -6,16 +6,13 @@ let PORT = process.env.PORT || 3000;
 
 let app = express();
 
-// Serve static content for the app from the "public" directory in the application directory.
+// Serve static content from public directory 
 app.use(express.static("public"));
 
-// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// parse application/json
 app.use(bodyParser.json());
 
-// Set Handlebars.
 let exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
