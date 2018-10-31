@@ -5,7 +5,13 @@
 <ul>
     {{#each burgers}}
         {{#unless devoured}}
-            {{!-- {{> burgers/burger-block devour=true}} --}}
+            <li>
+                <p>
+                    {{this.id}}. {{this.burger_name}}
+
+                    <button data-burgerid = "{{this.id}}" class = 'devourIt'>Devour!</button>
+                </p>
+            </li>
         {{/unless}}
     {{/each}}
 </ul>
@@ -15,13 +21,13 @@
 <ul>
     {{#each burgers}}
         {{#if devoured}}
-            {{!-- {{> burgers/burger-block devour=false}} --}}
+            {{this.id}}. {{this.burger_name}}
         {{/if}}
     {{/each}}
 </ul>
 
 
-<h2>Add a custom burger</h2>
+<h2>Create your burger!</h2>
 
 <form class="create-form">
     <div class="form-group">
